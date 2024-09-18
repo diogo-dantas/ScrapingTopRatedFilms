@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 url = 'https://en.everybodywiki.com/100_Most_Highly-Ranked_Films'
 db_name = 'Movies.db'
 table_name = 'Top_50'
-csv_path = '/home/project/top_50_films.csv'
+csv_path = './top_50_films.csv'
 df = pd.DataFrame(columns=["Average Rank","Film","Year"])
 count = 0
 
@@ -32,7 +32,7 @@ for row in rows:
     else:
         break
 
-print(df)
+print(df.to_string(index=False))
 
 # salvando os dados em csv
 
